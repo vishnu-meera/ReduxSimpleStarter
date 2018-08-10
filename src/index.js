@@ -1,15 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+const API_KEY = "AIzaSyD-Vm4qwZwArKW7L4C_3cl8yHL3_nw-uWE";
+import React,{Component} from 'react';
+import ReactDOM from'react-dom';
+import SearchBar from './components/serach_bar';
+import YTSearch from 'youtube-api-search';
 
-import App from './components/app';
-import reducers from './reducers';
+class App extends Component{ 
+    constructor(props){
+        super(props);
+        this.state ={videos:[]};
+        YTSearch({key:API_KEY,term:'new malayalam songs 2018'},videos=>{
+            this.setState({videos});
+            //console.log(this.state.videos)
+        });
+    };
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+    render(){
+        return (<div>
+            <SearchBar />
+        </div>);
+    };
+}
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+//export default App;
+ReactDOM.render(<App/>,document.getElementById("root"));
+
+
