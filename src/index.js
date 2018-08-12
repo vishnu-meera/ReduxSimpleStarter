@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyD-Vm4qwZwArKW7L4C_3cl8yHL3_nw-uWE";
+const API_KEY = "XXXX;
 import React,{Component} from 'react';
 import ReactDOM from'react-dom';
 import SearchBar from './components/serach_bar';
