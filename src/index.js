@@ -1,4 +1,4 @@
-const API_KEY = "XXXX;
+const API_KEY = "XXXX";
 import React,{Component} from 'react';
 import ReactDOM from'react-dom';
 import SearchBar from './components/serach_bar';
